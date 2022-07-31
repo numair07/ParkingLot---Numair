@@ -48,6 +48,10 @@ class Main {
           String vehicleNumber = splitString[1];
           String driverAge = splitString[3];
           int availableSlot = parkingLot.getNearestSlot();
+          if(availableSlot == 0) {
+            System.out.println("Sorry, Parking is Full. Please try again later.");
+            continue;
+          }
           parkingLot.completeParkingOperation(Integer.parseInt(driverAge), vehicleNumber, availableSlot); //add car to data
           
           outputString = "Car with vehicle registration number \"" + vehicleNumber +  "\" has been parked at slot number " + Integer.toString(availableSlot);
