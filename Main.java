@@ -89,6 +89,15 @@ class Main {
           main.bufferedWriter.write(outputString + "\n");
           System.out.println(outputString);
         }
+        else {
+          System.out.println("Incorrect Command Recieved. Please try again.");
+        }
+      }
+      else {
+        System.out.println("Incorrect Command Recieved");
+        if(parking_lot_created == 0) {
+          System.out.println("No Parking Lot Created.");
+        }
       }
     }
     main.bufferedWriter.close();
