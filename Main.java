@@ -40,6 +40,7 @@ class Main {
         parkingLot = new ParkingLot(Integer.parseInt(splitString[1]));
         outputString = "Created parking of " + splitString[1] + " slots";
         main.bufferedWriter.write(outputString + "\n");
+        System.out.println(outputString);
       }
       else if (parking_lot_created == 1) {
         if(str.contains("Park")) { // if the command is to park vehicle
@@ -51,18 +52,21 @@ class Main {
           
           outputString = "Car with vehicle registration number \"" + vehicleNumber +  "\" has been parked at slot number " + Integer.toString(availableSlot);
           main.bufferedWriter.write(outputString + "\n");
+          System.out.println(outputString);
         }
         else if(str.contains("Slot_numbers_for_driver_of_age")) {
           String splitString[] = str.split(" ");
           String driverAge = splitString[1];
           String slots = parkingLot.getSlotsCountByAge(Integer.parseInt(driverAge));
           main.bufferedWriter.write(slots + "\n");
+          System.out.println(slots);
         }
         else if(str.contains("Slot_number_for_car_with_number")) {
           String splitString[] = str.split(" ");
           String vehicleNumber = splitString[1];
           int slotNo = parkingLot.getSlotNumberByVehicleNumber(vehicleNumber);
           main.bufferedWriter.write(Integer.toString(slotNo) + "\n");
+          System.out.println(Integer.toString(slotNo));
         }
         else if(str.contains("Vehicle_registration_number_for_driver_of_age")) {
           String splitString[] = str.split(" ");
@@ -70,6 +74,7 @@ class Main {
           String RegistrationNumbers = parkingLot.getVehiclesByAge(Integer.parseInt(driverAge));
           if(RegistrationNumbers.length() > 0)
             main.bufferedWriter.write(RegistrationNumbers + "\n");
+          System.out.println(RegistrationNumbers);
         }
         else if(str.contains("Leave")) {
           String splitString[] = str.split(" ");
@@ -82,6 +87,7 @@ class Main {
             outputString = "Slot already vacant";
           }
           main.bufferedWriter.write(outputString + "\n");
+          System.out.println(outputString);
         }
       }
     }
